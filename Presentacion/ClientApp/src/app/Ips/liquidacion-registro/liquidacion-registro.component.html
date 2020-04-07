@@ -1,0 +1,25 @@
+<form id="formularioContenedor">
+  <form id="formulario">
+    <h1 id="titulo">CALCULAR COPAGO Y REGISTRAR LIQUIDACIONES</h1>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Identificacion</label>
+      <input type="text" class="form-control" name="identificacionDelPaciente" id="formGroupExampleInput" [(ngModel)]="liquidacion.identificacionDelPaciente"  placeholder="Digite la Identificacion del trabajador">
+    </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">Valor del servicio</label>
+        <input type="number"  class="form-control" name="valorDelServicio" id="formGroupExampleInput" [(ngModel)]="liquidacion.valorDelServicio" placeholder="Digite el valor del servicio hospitalario">
+    </div>
+
+    <div class="form-group">
+        <label for="formGroupExampleInput">Salario</label>
+        <input type="number" class="form-control" name="salarioDeTrabajador" id="formGroupExampleInput" [(ngModel)]="liquidacion.salarioDeTrabajador" placeholder="Digite aquí el salario del trabajador">
+    </div>
+
+    <button type="button" (click)="Registrar()" class="btn btn-success">Calcular y registrar</button> <label>o</label>
+    <button type="reset" class="btn btn-danger">Limpiar campos</button>
+    <br>      
+    <label id="subTitulo">Ultimo copago calculado en la sesión actual</label> <br>
+    <label id="info">Valor Copago: {{liquidacion.valorCopago}}</label>
+  </form>
+</form>

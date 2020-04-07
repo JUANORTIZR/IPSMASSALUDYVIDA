@@ -1,0 +1,24 @@
+<h1>Liquidaciones registrada</h1>
+
+<table class="table table-dark" *ngIf='liquidaciones && liquidaciones.length'>
+    <thead>
+        <th scope="col">#</th>
+        <th scope="col">Identificacion Paciente</th>
+        <th scope="col">Valor del servicio</th>
+        <th scope="col">Salario del trabajador</th>
+        <th scope="col">Tarifa</th>
+        <th scope="col">Valor Copago</th>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let  liquidacion of liquidaciones; index as i ">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ liquidacion.identificacionDelPaciente }} </td>
+            <td>{{ liquidacion.valorDelServicio }}</td>
+            <td>{{ liquidacion.salarioDeTrabajador }}</td>
+            <td *ngIf='liquidacion.salarioDeTrabajador>=2500000'>20%</td>
+            <td *ngIf='liquidacion.salarioDeTrabajador<=2500000'>10%</td>
+            <td>{{ liquidacion.valorCopago }}</td>
+        </tr>
+    </tbody>
+</table>
